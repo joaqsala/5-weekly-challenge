@@ -41,6 +41,14 @@
   row.append(saveButton)
 
   
+  if (i < currentTime){
+    row.addClass("past")
+  } else if (i == currentTime) {
+    row.addClass("present")
+  } else {
+    row.addClass("future")
+  }
+
 
   $(".container-lg.px-5").append(row);
   // TODO: Add a listener for click events on the save button. This code should
