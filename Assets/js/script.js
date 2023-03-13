@@ -7,17 +7,26 @@
 // in the html.
 
 
-$(function () {
+// $(function () {
+
+  var today = dayjs().format("dddd, MMMM D")
+  $("#currentDay").text(today);
 
 
-
-
-  var currentTime = dayjs().for('H');
+  var currentTime = dayjs().format('H');
   console.log(currentTime)
 
-  for (var i = 9; i <= 17; i++)
-  var hourText = i == 12 ? "12PM" : (i > 12 ? `${i - 12}PM` : `${i}AM`);
-  console.log(hourText)
+  for (var i = 9; i <= 17; i++) {
+    var hourText;
+    if (i < 12) {
+      hourText = `${i}AM`
+    } else if
+      (i == 12) {
+      hourText = "12PM"
+    } else {
+      hourText = `${i - 12}PM`
+    }
+    console.log(hourText);
 
     
 
@@ -40,10 +49,9 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
   
-  let today = dayjs().format("dddd, MMMM D")
-  $("#currentDay").text(today);
-});
+// }})
+
 
 // window.onload = function(){
 //   //whatever first function is being used
-// }
+}
