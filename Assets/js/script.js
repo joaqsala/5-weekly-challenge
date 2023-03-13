@@ -8,7 +8,19 @@
 
 
 $(function () {
-  
+
+
+
+
+  var currentTime = dayjs().for('H');
+  console.log(currentTime)
+
+  for (var i = 9; i <= 17; i++)
+  var hourText = i == 12 ? "12PM" : (i > 12 ? `${i - 12}PM` : `${i}AM`);
+  console.log(hourText)
+
+    
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
