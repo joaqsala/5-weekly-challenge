@@ -54,9 +54,9 @@ $(document).ready(function(){
 
   //appends the rows to the container
   $(".container-lg.px-5").append(row);
- 
 
-  // adds an click listener event on the save button
+
+  // adds a click listener on the save button
   $(".saveBtn").click(function () {
     //saves the id in the parent(containing time-block)as the key to be used in localStorage
     var id = $(this).parent().attr("id")
@@ -66,6 +66,5 @@ $(document).ready(function(){
     //saves the key and text area contentd(value) to local storage 
     localStorage.setItem(id, planner)
   })
-
   }
 })
