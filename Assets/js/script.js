@@ -15,8 +15,9 @@
 
   var currentTime = dayjs().format('H');
   console.log(currentTime)
+  $(".container-lg.px-5").html("")
 
-  for (var i = 9; i <= 17; i++) {
+  for (var i = 6; i <= 18; i++) {
     var hourText;
     if (i < 12) {
       hourText = `${i}AM`
@@ -28,19 +29,20 @@
     }
     console.log(hourText);
 
-  }
-  console.log(hourText);
-  var planner = localStorage.getItem(i)
+  
   var row = $("<div>").attr("id", `${i}`).addClass("row time-block");
   var hourCol = $("<div>").addClass("col-2 col-md-1 hour text-center py-3").text(`${hourText}`);
   row.append(hourCol);
-  var description = $("<textarea>").addClass("col-8 col-md-10 description").val(planner)
-  description.text(planner)
+
+  var description = $("<textarea>").addClass("col-8 col-md-10 description")
   row.append(description)
+  
   var saveButton = $("<button>").addClass("btn saveBtn col-2 col-md-1").attr("aria-label", "save").append($("<i>").addClass("fas fa-save").attr("aria-hidden", true));
   row.append(saveButton)
 
-  $(".container-lg.px-5").html("")
+  
+
+  $(".container-lg.px-5").append(row);
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -53,7 +55,8 @@
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  //
+
+  
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
@@ -65,4 +68,4 @@
 
 // window.onload = function(){
 //   //whatever first function is being used
-
+  }
